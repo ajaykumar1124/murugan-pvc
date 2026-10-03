@@ -1,0 +1,15 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="500" fill="#1a2620"/>
+  <rect x="50" y="80" width="500" height="340" fill="#e6dfd1"/>
+  <rect x="60" y="90" width="220" height="320" fill="#f5f1e8"/>
+  <rect x="70" y="100" width="200" height="80" fill="#c9c3b8" stroke="#a49d92" stroke-width="2"/>
+  <rect x="70" y="190" width="200" height="80" fill="#c9c3b8" stroke="#a49d92" stroke-width="2"/>
+  <rect x="70" y="280" width="200" height="120" fill="#c9c3b8" stroke="#a49d92" stroke-width="2"/>
+  <circle cx="250" cy="235" r="6" fill="#6f6a63"/>
+  <circle cx="250" cy="340" r="6" fill="#6f6a63"/>
+  <rect x="300" y="200" width="230" height="160" fill="#8b6f47"/>
+  <rect x="310" y="210" width="210" height="100" fill="#6f5a3a"/>
+  <line x1="300" y1="360" x2="530" y2="360" stroke="#c9a870" stroke-width="4"/>
+  <text x="300" y="260" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#f5f1e8" text-anchor="middle">Modular kitchen</text>
+  <text x="300" y="290" font-family="monospace" font-size="10" fill="#c9a870" text-anchor="middle" letter-spacing="2">PRACTICAL LAYOUTS</text>
+</svg>

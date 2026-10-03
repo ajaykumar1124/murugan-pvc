@@ -1,0 +1,16 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dce8e4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#b8ccc6;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="#1a2620"/>
+  <line x1="80" y1="150" x2="320" y2="150" stroke="#c9a870" stroke-width="8"/>
+  <line x1="80" y1="150" x2="80" y2="450" stroke="#c9a870" stroke-width="8"/>
+  <line x1="320" y1="150" x2="320" y2="450" stroke="#c9a870" stroke-width="8"/>
+  <rect x="84" y="154" width="232" height="292" fill="url(#glass)"/>
+  <path d="M 100 200 L 300 300 L 300 450 L 100 450 Z" fill="none" stroke="#294d43" stroke-width="2"/>
+  <text x="200" y="320" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#f5f1e8" text-anchor="middle">Glass work</text>
+  <text x="200" y="350" font-family="monospace" font-size="9" fill="#c9a870" text-anchor="middle" letter-spacing="2">BALCONY &amp; STAIR RAILING</text>
+</svg>

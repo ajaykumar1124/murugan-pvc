@@ -1,0 +1,136 @@
+.pvc-cupboards-section {
+  background: var(--white);
+  padding: 80px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cupboards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.cupboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cupboard-card:hover {
+  transform: translateY(-4px);
+}
+
+.cupboard-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+}
+
+.cupboard-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.cupboard-card:hover .cupboard-image img {
+  transform: scale(1.05);
+}
+
+.cupboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cupboard-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.cupboard-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.cupboard-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(34, 139, 34, 0.1);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.view-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  transition: gap 0.3s ease;
+  margin-top: 4px;
+}
+
+.view-work:hover {
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .cupboards-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pvc-cupboards-section {
+    padding: 60px 0;
+  }
+
+  .cupboards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+
+  .cupboard-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pvc-cupboards-section {
+    padding: 40px 0;
+  }
+
+  .cupboards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cupboard-features {
+    gap: 6px;
+  }
+
+  .feature-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}

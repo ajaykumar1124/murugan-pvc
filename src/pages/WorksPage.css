@@ -1,0 +1,27 @@
+.back-to-home-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--cream);
+  text-align: center;
+  border-top: 1px solid var(--gray);
+}
+
+.back-to-home-section .btn {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .back-to-home-section {
+    padding: clamp(40px, 6vw, 70px) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-home-section {
+    padding: clamp(30px, 4vw, 50px) 0;
+  }
+
+  .back-to-home-section .btn {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}

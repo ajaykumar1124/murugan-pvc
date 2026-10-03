@@ -1,0 +1,12 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="600" fill="#1a2620"/>
+  <rect x="50" y="100" width="300" height="400" fill="#8b6f47"/>
+  <rect x="60" y="110" width="280" height="125" fill="#6f5a3a" stroke="#4a3a24" stroke-width="2"/>
+  <rect x="60" y="245" width="280" height="125" fill="#6f5a3a" stroke="#4a3a24" stroke-width="2"/>
+  <rect x="60" y="380" width="280" height="110" fill="#6f5a3a" stroke="#4a3a24" stroke-width="2"/>
+  <circle cx="320" cy="173" r="6" fill="#c9a870"/>
+  <circle cx="320" cy="308" r="6" fill="#c9a870"/>
+  <circle cx="320" cy="435" r="6" fill="#c9a870"/>
+  <text x="200" y="320" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#f5f1e8" text-anchor="middle">Storage details</text>
+  <text x="200" y="350" font-family="monospace" font-size="9" fill="#c9a870" text-anchor="middle" letter-spacing="2">CUSTOM PVC WARDROBE</text>
+</svg>

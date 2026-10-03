@@ -1,0 +1,15 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="500" fill="#1a2620"/>
+  <rect x="50" y="100" width="500" height="300" fill="#2a3a34"/>
+  <rect x="60" y="120" width="140" height="90" fill="#1a1a1a"/>
+  <rect x="70" y="130" width="120" height="70" fill="#3a4a44" opacity="0.8"/>
+  <rect x="220" y="110" width="160" height="280" fill="#8b6f47"/>
+  <line x1="220" y1="110" x2="380" y2="110" stroke="#4a3a24" stroke-width="2"/>
+  <line x1="300" y1="110" x2="300" y2="390" stroke="#4a3a24" stroke-width="2"/>
+  <rect x="400" y="120" width="130" height="260" fill="#6f5a3a"/>
+  <rect x="410" y="130" width="110" height="80" fill="#5d4a2f" stroke="#3a2a14" stroke-width="2"/>
+  <rect x="410" y="220" width="110" height="80" fill="#5d4a2f" stroke="#3a2a14" stroke-width="2"/>
+  <rect x="410" y="310" width="110" height="60" fill="#5d4a2f" stroke="#3a2a14" stroke-width="2"/>
+  <text x="300" y="250" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#f5f1e8" text-anchor="middle">Interior design</text>
+  <text x="300" y="280" font-family="monospace" font-size="10" fill="#c9a870" text-anchor="middle" letter-spacing="2">TV UNITS, FLUTED PANELS</text>
+</svg>

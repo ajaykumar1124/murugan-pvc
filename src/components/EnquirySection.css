@@ -1,0 +1,64 @@
+.enquiry {
+  background: #e9e2d4;
+}
+
+.enquiry-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+
+.enquiry-lede {
+  max-width: 40ch;
+  margin-top: 28px;
+}
+
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.contact-row > .lucide {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  color: var(--terracotta);
+}
+
+.contact-label {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.contact-value {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  transition: color 0.25s ease;
+}
+
+a.contact-value:hover {
+  color: var(--terracotta);
+}
+
+@media (max-width: 980px) {
+  .enquiry-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}

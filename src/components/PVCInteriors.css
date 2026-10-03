@@ -1,0 +1,696 @@
+.pvc-interiors-page {
+  background: var(--paper);
+}
+
+/* Hero Section */
+.pvc-hero {
+  padding-top: clamp(100px, 12vw, 160px);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--blue-pale) 100%);
+}
+
+.pvc-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+
+.pvc-hero h1 {
+  margin-bottom: 24px;
+}
+
+.pvc-hero .lede {
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.pvc-hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pvc-hero-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pvc-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Interior Works Section */
+.pvc-interior-works {
+  background: var(--paper);
+}
+
+.pvc-interior-works-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-section-lede {
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+.pvc-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.pvc-work-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-work-card:hover {
+  border-color: var(--terracotta);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.pvc-work-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.pvc-work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-work-card:hover .pvc-work-image img {
+  transform: scale(1.05);
+}
+
+.pvc-work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  flex: 1;
+}
+
+.pvc-work-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+.pvc-work-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.pvc-work-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--terracotta);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.pvc-work-cta:hover {
+  gap: 12px;
+  color: var(--terracotta-dark);
+}
+
+/* Cupboards Section */
+.pvc-cupboards {
+  background: var(--cream);
+}
+
+.pvc-cupboards-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-cupboards-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: clamp(32px, 4vw, 48px) 0;
+}
+
+.pvc-cupboard-tab {
+  padding: 16px 20px;
+  background: #fff;
+  border: 2px solid var(--gray);
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  font-size: 0.95rem;
+}
+
+.pvc-cupboard-tab:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+  background: rgba(201, 83, 52, 0.04);
+}
+
+.pvc-cupboard-tab.active {
+  background: var(--terracotta);
+  color: #fff;
+  border-color: var(--terracotta);
+}
+
+.pvc-cupboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+  padding: clamp(32px, 4vw, 60px) 0;
+}
+
+.pvc-cupboard-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--beige);
+}
+
+.pvc-cupboard-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pvc-cupboard-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pvc-cupboard-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+.pvc-cupboard-desc {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.pvc-cupboard-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.pvc-cupboard-features li {
+  font-size: 0.95rem;
+  color: var(--ink);
+  display: flex;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.pvc-cupboard-features li::before {
+  content: '✓';
+  color: var(--terracotta);
+  font-weight: 700;
+  flex: none;
+  width: 20px;
+}
+
+/* Gallery Section */
+.pvc-gallery {
+  background: var(--paper);
+}
+
+.pvc-gallery-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.pvc-gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--gray);
+  background: var(--beige);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  padding: 0;
+}
+
+.pvc-gallery-item:hover {
+  border-color: var(--terracotta);
+  transform: translateY(-4px);
+}
+
+.pvc-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.pvc-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-gallery-item:hover .pvc-gallery-overlay {
+  opacity: 1;
+}
+
+.pvc-gallery-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--terracotta);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* Why PVC Section */
+.pvc-why {
+  background: var(--cream);
+}
+
+.pvc-why-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.pvc-why-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(24px, 3vw, 40px);
+  background: #fff;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-why-card:hover {
+  border-color: var(--terracotta);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pvc-why-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+.pvc-why-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Brand Section */
+.pvc-brand-section {
+  background: var(--green);
+  color: #fff;
+}
+
+.pvc-brand-section-inner {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pvc-brand-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+  width: 100%;
+}
+
+.pvc-brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.display--light {
+  color: #fff;
+}
+
+.lede--light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pvc-brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.pvc-brand-logo img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  filter: brightness(0) invert(1);
+}
+
+/* Process Section */
+.pvc-process {
+  background: var(--paper);
+}
+
+.pvc-process-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+  margin-top: clamp(32px, 4vw, 60px);
+}
+
+.pvc-process-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(24px, 3vw, 40px);
+  background: #fff;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.pvc-process-card:hover {
+  border-color: var(--terracotta);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pvc-process-number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.pvc-process-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green);
+  line-height: 1.2;
+}
+
+.pvc-process-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.pvc-process-arrow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--terracotta);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* Contact Section */
+.pvc-contact {
+  background: var(--cream);
+}
+
+.pvc-contact-inner {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.pvc-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 80px);
+}
+
+.pvc-contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.pvc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pvc-form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pvc-form-group input,
+.pvc-form-group select,
+.pvc-form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.pvc-form-group input:focus,
+.pvc-form-group select:focus,
+.pvc-form-group textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(201, 83, 52, 0.1);
+}
+
+.pvc-form-group-full {
+  grid-column: 1 / -1;
+}
+
+.pvc-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+.pvc-contact-info h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.pvc-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pvc-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pvc-contact-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pvc-contact-item:hover {
+  padding-left: 8px;
+  color: var(--terracotta);
+}
+
+.pvc-contact-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.pvc-contact-value {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pvc-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pvc-cupboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-brand-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-brand-logo {
+    max-height: 300px;
+  }
+
+  .pvc-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pvc-works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-cupboards-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pvc-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pvc-hero-cta {
+    flex-direction: column;
+  }
+
+  .pvc-hero-cta .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pvc-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pvc-work-title {
+    font-size: 1.2rem;
+  }
+
+  .pvc-cupboard-title {
+    font-size: 1.5rem;
+  }
+
+  .display {
+    font-size: 2rem;
+  }
+}

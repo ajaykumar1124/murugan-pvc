@@ -1,0 +1,19 @@
+.back-to-home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px;
+  background: var(--cream);
+}
+
+.back-to-home-section .btn {
+  padding: 16px 36px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .back-to-home-section {
+    padding: 40px 24px;
+  }
+}

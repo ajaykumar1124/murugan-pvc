@@ -11,6 +11,7 @@ export default function EnquiryForm({ interest, onInterestChange }) {
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
+  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const next = {};
@@ -27,6 +28,7 @@ export default function EnquiryForm({ interest, onInterestChange }) {
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
+    setSubmitError('');
     setStatus('sending');
 
     try {
@@ -44,12 +46,13 @@ export default function EnquiryForm({ interest, onInterestChange }) {
       });
 
       const result = await response.json();
-      if (!response.ok || result.success === false || result.success === 'false') {
+      if (!response.ok || (result.success !== true && result.success !== 'true')) {
         throw new Error(result.message || `Form service responded ${response.status}`);
       }
 
       setStatus('success');
-    } catch {
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Unexpected error while sending.');
       setStatus('error');
     }
   };
@@ -62,12 +65,16 @@ export default function EnquiryForm({ interest, onInterestChange }) {
     `Project: ${message.trim() || 'Not specified'}`,
   ].join('\n');
   const emailFallback = `mailto:${BRAND.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+  const whatsappFallback = whatsappUrl(
+    `Website enquiry\n${emailBody}`,
+  );
 
   const reset = () => {
     setName('');
     setPhone('');
     setMessage('');
     setErrors({});
+    setSubmitError('');
     setStatus('idle');
   };
 
@@ -163,10 +170,11 @@ export default function EnquiryForm({ interest, onInterestChange }) {
         <p className="form-status" role="alert">
           The enquiry could not be sent right now. Please try again,{' '}
           <a href={emailFallback}>email these details</a>, or{' '}
-          <a href={whatsappUrl()} target="_blank" rel="noreferrer">
+          <a href={whatsappFallback} target="_blank" rel="noreferrer">
             start on WhatsApp
           </a>{' '}
           instead.
+          {submitError && <span> Error details: {submitError}</span>}
         </p>
       )}
     </form>

@@ -107,6 +107,8 @@
 
   .pvc-hero-image {
     height: 400px;
+    width: min(calc(100% - 32px), 520px);
+    justify-self: center;
   }
 }
 

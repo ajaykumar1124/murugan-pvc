@@ -14,8 +14,8 @@ import {
 
 export const BRAND = {
   name: 'Sri Murugan',
-  subtitle: 'PVC Doors & uPVC Windows',
-  headerSub: 'PVC & Doors · Since local',
+  subtitle: 'PVC & UPVC Windows',
+  headerSub: 'PVC & UPVC Windows',
   phonePrimary: '9003219474',
   phoneSecondary: ['8220719474', '98400 72799'],
   whatsapp: '918220719474',

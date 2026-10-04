@@ -1,4 +1,4 @@
-# Sri Murugan — Premium PVC Doors & uPVC Windows
+# Sri Murugan PVC & UPVC Windows
 
 A modern, fully responsive website for Sri Murugan, Chennai's trusted provider of premium PVC doors, uPVC windows, and complete interior solutions.
 
@@ -384,7 +384,7 @@ Ensure SPA routing is configured:
 ## 📞 Contact Information
 
 **Sri Murugan**  
-PVC Doors & uPVC Windows
+PVC & UPVC Windows
 
 - **Address**: 175, GNT Rd, Sakthivel Nagar, Puzhal, Chennai, Tamil Nadu 600066
 - **Phone**: 8220719474 | 9003219474

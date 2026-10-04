@@ -9,6 +9,13 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const isOnPVCPage = location.pathname === '/pvc-interiors';
+  const sectionLinks = [
+    { label: 'About Us', id: 'about-us' },
+    { label: 'Services', id: 'services' },
+    { label: 'Completed Projects', id: 'completed-projects' },
+    { label: 'Our Team', id: 'our-team' },
+    { label: 'Contact', id: 'contact' },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -16,6 +23,15 @@ export default function Navbar() {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  useEffect(() => {
+    if (!['/', '/pvc-interiors'].includes(location.pathname) || !location.hash) return undefined;
+    const sectionId = location.hash.slice(1);
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname, location.hash]);
 
   const handleNavClick = () => {
     setOpen(false);
@@ -25,18 +41,48 @@ export default function Navbar() {
     e.preventDefault();
     navigate('/');
     setOpen(false);
+    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
   };
 
-  const handlePVCInteriorsClick = (e) => {
-    e.preventDefault();
-    navigate('/pvc-interiors');
+  const handleSectionClick = (event, sectionId) => {
+    event.preventDefault();
     setOpen(false);
+    if (isOnPVCPage && sectionId === 'contact') {
+      document.getElementById('pvc-contact')?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    const hash = `#${sectionId}`;
+    if (location.pathname === '/' && location.hash === hash) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    navigate(`/${hash}`);
   };
 
-  const handleServicesClick = (e) => {
-    e.preventDefault();
-    navigate('/services');
+  const handleTeamClick = (event) => {
+    event.preventDefault();
     setOpen(false);
+    if (location.pathname === '/pvc-interiors' && location.hash === '#our-team') {
+      document.getElementById('our-team')?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    navigate('/pvc-interiors#our-team');
+  };
+
+  const handleProjectsClick = (event) => {
+    event.preventDefault();
+    setOpen(false);
+    navigate('/completed-projects');
+  };
+
+  const handleEnquiryClick = (e) => {
+    e.preventDefault();
+    setOpen(false);
+    if (isOnPVCPage) {
+      document.getElementById('pvc-contact')?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    handleSectionClick(e, 'contact');
   };
 
   return (
@@ -52,37 +98,16 @@ export default function Navbar() {
           </Link>
 
           <nav className="nav-links" aria-label="Primary">
-            {isOnPVCPage ? (
-              <>
-                <Link to="/" onClick={handleNavClick}>
-                  Home
-                </Link>
-                <a href="#pvc-contact" onClick={handleNavClick}>
-                  Contact
-                </a>
-              </>
-            ) : (
-              <>
-                <a href="#products" onClick={handleNavClick}>
-                  Products
-                </a>
-                <Link to="/services" onClick={handleServicesClick}>
-                  Our services
-                </Link>
-                <a href="#works" onClick={handleNavClick}>
-                  Our Works
-                </a>
-                <a href="#brands" onClick={handleNavClick}>
-                  Brands
-                </a>
-                <Link to="/pvc-interiors" onClick={handlePVCInteriorsClick}>
-                  PVC Interiors
-                </Link>
-                <a href="#contact" onClick={handleNavClick}>
-                  Contact
-                </a>
-              </>
-            )}
+            <Link to="/" onClick={handleLogoClick}>Home</Link>
+            {sectionLinks.map((item) => (
+              <a
+                href={item.id === 'our-team' ? '/pvc-interiors#our-team' : item.id === 'completed-projects' ? '/completed-projects' : isOnPVCPage && item.id === 'contact' ? '#pvc-contact' : `/#${item.id}`}
+                key={item.id}
+                onClick={item.id === 'our-team' ? handleTeamClick : item.id === 'completed-projects' ? handleProjectsClick : (event) => handleSectionClick(event, item.id)}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           <div className="nav-cta">
@@ -93,7 +118,7 @@ export default function Navbar() {
             <a
               className="btn btn-primary nav-enquiry"
               href={isOnPVCPage ? '#pvc-contact' : '#contact'}
-              onClick={handleNavClick}
+              onClick={handleEnquiryClick}
             >
               Start an enquiry
             </a>
@@ -125,44 +150,23 @@ export default function Navbar() {
         </div>
 
         <nav className="nav-drawer-links" aria-label="Mobile">
-          {isOnPVCPage ? (
-            <>
-              <Link to="/" onClick={handleNavClick}>
-                Home
-              </Link>
-              <a href="#pvc-contact" onClick={handleNavClick}>
-                Contact
-              </a>
-            </>
-          ) : (
-            <>
-              <a href="#products" onClick={handleNavClick}>
-                Products
-              </a>
-              <Link to="/services" onClick={handleServicesClick}>
-                Our services
-              </Link>
-              <a href="#works" onClick={handleNavClick}>
-                Our Works
-              </a>
-              <a href="#brands" onClick={handleNavClick}>
-                Brands
-              </a>
-              <Link to="/pvc-interiors" onClick={handlePVCInteriorsClick}>
-                PVC Interiors
-              </Link>
-              <a href="#contact" onClick={handleNavClick}>
-                Contact
-              </a>
-            </>
-          )}
+          <Link to="/" onClick={handleLogoClick}>Home</Link>
+          {sectionLinks.map((item) => (
+            <a
+              href={item.id === 'our-team' ? '/pvc-interiors#our-team' : item.id === 'completed-projects' ? '/completed-projects' : isOnPVCPage && item.id === 'contact' ? '#pvc-contact' : `/#${item.id}`}
+              key={item.id}
+              onClick={item.id === 'our-team' ? handleTeamClick : item.id === 'completed-projects' ? handleProjectsClick : (event) => handleSectionClick(event, item.id)}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="nav-drawer-foot">
           <a
             className="btn btn-primary btn-block"
-            href={isOnPVCPage ? '#pvc-contact' : '#contact'}
-            onClick={handleNavClick}
+            href={isOnPVCPage ? '#pvc-contact' : '/#contact'}
+            onClick={handleEnquiryClick}
           >
             Start an enquiry
           </a>

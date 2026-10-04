@@ -32,8 +32,8 @@ export default function PVCInteriorsHero() {
       </div>
       <Reveal className="pvc-hero-image">
         <img 
-          src="/images/pvc-interior-01-living-room.jpg" 
-          alt="Premium PVC interior with fluted wall panels"
+          src="/images/pvc-wardrobe-black-white.jpg" 
+          alt="Black and white PVC wardrobe in a modern bedroom"
         />
       </Reveal>
     </section>

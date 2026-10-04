@@ -3,6 +3,11 @@ import ServiceCard from './ServiceCard';
 import Reveal from './Reveal';
 import './Services.css';
 
+const serviceGallery = SERVICES.map((service) => ({
+  img: service.img,
+  alt: service.alt || service.title,
+}));
+
 export function Services({ onPreview }) {
   return (
     <section className="section services" id="services">
@@ -19,7 +24,12 @@ export function Services({ onPreview }) {
         <div className="services-grid">
           {SERVICES.map((service, i) => (
             <Reveal key={service.title} delay={i * 70}>
-              <ServiceCard service={service} onPreview={onPreview} />
+              <ServiceCard
+                service={service}
+                onPreview={onPreview}
+                gallery={serviceGallery}
+                index={i}
+              />
             </Reveal>
           ))}
         </div>

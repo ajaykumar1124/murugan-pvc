@@ -3,7 +3,9 @@ import PVCInteriorsHero from '../components/PVCInteriorsHero';
 import PVCInteriorWorks from '../components/PVCInteriorWorks';
 import PVCCupboardsSection from '../components/PVCCupboardsSection';
 import BrandsSection from '../components/BrandsSection';
+import PVCWorksGallery from '../components/PVCWorksGallery';
 import EnquirySection from '../components/EnquirySection';
+import { OurTeamContent } from './OurTeamPage';
 import './PVCInteriorsPage.css';
 
 export default function PVCInteriorsPage({ interest, onInterestChange, onPreview }) {
@@ -17,8 +19,10 @@ export default function PVCInteriorsPage({ interest, onInterestChange, onPreview
         <PVCCupboardsSection onPreview={onPreview} />
         {/* 03 / BRANDS WE WORK WITH */}
         <BrandsSection onPreview={onPreview} />
+        <PVCWorksGallery onPreview={onPreview} />
+        <OurTeamContent showHero={false} contactHref="#pvc-contact" />
         {/* 04 / LET'S MAKE A PLAN */}
-        <EnquirySection interest={interest} onInterestChange={onInterestChange} />
+        <EnquirySection interest={interest} onInterestChange={onInterestChange} id="pvc-contact" />
         <div className="back-to-home-section">
           <Link to="/" className="btn btn-primary">
             ← Back to Home

@@ -8,11 +8,11 @@ export default function PVCWorksGallery({ onPreview }) {
   };
 
   return (
-    <section className="pvc-works-gallery">
+    <section className="pvc-works-gallery" id="gallery">
       <div className="container">
         <div className="section-header">
           <Reveal>
-            <p className="section-label">03 / OUR PVC WORKS</p>
+            <p className="section-label">04 / PVC WORK GALLERY</p>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="section-heading">Picture the finished space.</h2>

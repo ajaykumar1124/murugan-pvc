@@ -52,6 +52,12 @@
   transition: color 0.25s ease;
 }
 
+.contact-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 a.contact-value:hover {
   color: var(--terracotta);
 }

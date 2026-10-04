@@ -24,8 +24,8 @@ export default function PVCFeature() {
           </Reveal>
           <Reveal className="pvc-feature-image">
             <img 
-              src="/images/pvc-interior-03-tv-unit.jpg" 
-              alt="PVC TV unit and storage interior"
+              src="/images/pvc-ceiling-white.jpg" 
+              alt="White PVC ceiling and TV wall in a living room"
               loading="lazy"
             />
           </Reveal>

@@ -73,8 +73,8 @@ export default function PVCInteriors() {
           <Reveal delay={120}>
             <div className="pvc-hero-image">
               <img
-                src="/images/18-interior-design.jpg"
-                alt="PVC interior works showcase"
+                src="/images/pvc-wardrobe-black-white.jpg"
+                alt="Black and white PVC wardrobe in a modern bedroom"
                 loading="lazy"
               />
             </div>
@@ -340,7 +340,7 @@ export default function PVCInteriors() {
                   </a>
                   <a href={whatsappUrl()} className="pvc-contact-item">
                     <span className="pvc-contact-label">WhatsApp</span>
-                    <span className="pvc-contact-value">{BRAND.whatsapp}</span>
+                    <span className="pvc-contact-value">{BRAND.whatsappDisplay}</span>
                   </a>
                   <a href={`mailto:${BRAND.email}`} className="pvc-contact-item">
                     <span className="pvc-contact-label">Email</span>

@@ -1,7 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useCallback, useState } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
+import CompletedProjectsPage from './pages/CompletedProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import PVCInteriorsPage from './pages/PVCInteriorsPage';
 import Lightbox from './components/Lightbox';
@@ -76,6 +78,11 @@ export default function App() {
           }
         />
         <Route
+          path="/completed-projects"
+          element={<CompletedProjectsPage onPreview={handlePreview} />}
+        />
+        <Route path="/our-team" element={<Navigate to="/pvc-interiors#our-team" replace />} />
+        <Route
           path="/pvc-interiors"
           element={
             <PVCInteriorsPage
@@ -86,6 +93,7 @@ export default function App() {
           }
         />
       </Routes>
+      <Footer />
       <Lightbox 
         image={lightboxImage} 
         title={lightboxTitle} 

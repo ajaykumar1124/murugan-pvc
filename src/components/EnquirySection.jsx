@@ -4,9 +4,9 @@ import EnquiryForm from './EnquiryForm';
 import Reveal from './Reveal';
 import './EnquirySection.css';
 
-export default function EnquirySection({ interest, onInterestChange }) {
+export default function EnquirySection({ interest, onInterestChange, id = 'contact' }) {
   return (
-    <section className="section enquiry" id="contact">
+    <section className="section enquiry" id={id}>
       <div className="container enquiry-inner">
         <Reveal className="enquiry-left">
           <p className="eyebrow">06 / Let's make a plan</p>
@@ -37,23 +37,31 @@ export default function EnquirySection({ interest, onInterestChange }) {
               <Phone />
               <div>
                 <p className="contact-label">Secondary line</p>
-                <a className="contact-value" href={`tel:${BRAND.phoneSecondary}`}>
-                  {BRAND.phoneSecondary}
-                </a>
+                <div className="contact-numbers">
+                  {BRAND.phoneSecondary.map((number) => (
+                    <a
+                      className="contact-value"
+                      href={`tel:${number.replace(/\s/g, '')}`}
+                      key={number}
+                    >
+                      {number}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className="contact-row">
               <MessageCircle />
               <div>
-                <p className="contact-label">Quick message</p>
+                <p className="contact-label">WhatsApp</p>
                 <a
                   className="contact-value"
                   href={whatsappUrl()}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Start on WhatsApp
+                  {BRAND.whatsappDisplay}
                 </a>
               </div>
             </div>

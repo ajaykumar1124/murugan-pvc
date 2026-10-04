@@ -1,6 +1,6 @@
 import './ServiceCard.css';
 
-export default function ServiceCard({ service }) {
+export default function ServiceCard({ service, onPreview, gallery, index }) {
   const Icon = service.icon;
 
   return (
@@ -15,14 +15,19 @@ export default function ServiceCard({ service }) {
         </div>
       </div>
 
-      <div className="service-media">
+      <button
+        type="button"
+        className="service-media"
+        onClick={() => onPreview?.(service.img, service.alt || service.title, gallery, index)}
+        aria-label={`View full image of ${service.title}`}
+      >
         <img
           src={service.img}
           alt={service.alt || service.title}
           loading="lazy"
           style={{ objectPosition: service.imagePosition || 'center' }}
         />
-      </div>
+      </button>
     </article>
   );
 }

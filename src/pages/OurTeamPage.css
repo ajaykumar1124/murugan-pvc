@@ -1,0 +1,184 @@
+.our-team-hero {
+  padding: clamp(64px, 8vw, 112px) 0;
+  background: var(--cream);
+}
+
+.our-team-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 84px);
+}
+
+.our-team-hero-copy .display {
+  margin: 0;
+}
+
+.our-team-hero-subtitle {
+  margin: 24px 0 0;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  font-weight: 600;
+}
+
+.our-team-hero-description {
+  max-width: 48ch;
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.our-team-hero-media {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.our-team-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.our-team-hero-media span {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.team-section {
+  background: var(--paper);
+}
+
+.team-section .display {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.team-section .team-subtitle {
+  margin-top: 16px;
+}
+
+.team-photo-placeholder {
+  aspect-ratio: 1 / 1;
+}
+
+.team-card-details > span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.team-culture {
+  background: var(--cream);
+}
+
+.team-culture .display {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.team-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  margin-top: 36px;
+}
+
+.team-value-card {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid rgba(41, 35, 31, 0.14);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.team-value-card > svg {
+  width: 26px;
+  height: 26px;
+  color: var(--terracotta);
+}
+
+.team-value-card h3 {
+  margin: 16px 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.team-value-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.team-page-cta {
+  padding: clamp(48px, 7vw, 80px) 0;
+  background: var(--green);
+  color: var(--cream);
+}
+
+.team-page-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.team-page-cta .eyebrow {
+  margin-bottom: 14px;
+}
+
+.team-page-cta h2 {
+  max-width: 20ch;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.team-page-cta p:not(.eyebrow) {
+  margin: 10px 0 0;
+  color: rgba(245, 241, 232, 0.78);
+}
+
+.team-page-cta .btn {
+  flex: none;
+}
+
+@media (max-width: 900px) {
+  .our-team-hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .team-grid,
+  .team-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .our-team-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid,
+  .team-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-page-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

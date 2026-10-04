@@ -43,13 +43,25 @@ export default function EnquiryForm({ interest, onInterestChange }) {
         }),
       });
 
-      if (!response.ok) throw new Error(`Form service responded ${response.status}`);
+      const result = await response.json();
+      if (!response.ok || result.success === false || result.success === 'false') {
+        throw new Error(result.message || `Form service responded ${response.status}`);
+      }
 
       setStatus('success');
     } catch {
       setStatus('error');
     }
   };
+
+  const emailSubject = `Website enquiry: ${interest}`;
+  const emailBody = [
+    `Name: ${name.trim()}`,
+    `Phone: ${phone.trim()}`,
+    `Interested in: ${interest}`,
+    `Project: ${message.trim() || 'Not specified'}`,
+  ].join('\n');
+  const emailFallback = `mailto:${BRAND.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   const reset = () => {
     setName('');
@@ -149,7 +161,8 @@ export default function EnquiryForm({ interest, onInterestChange }) {
 
       {status === 'error' && (
         <p className="form-status" role="alert">
-          The enquiry could not be sent right now. Please try again, or{' '}
+          The enquiry could not be sent right now. Please try again,{' '}
+          <a href={emailFallback}>email these details</a>, or{' '}
           <a href={whatsappUrl()} target="_blank" rel="noreferrer">
             start on WhatsApp
           </a>{' '}

@@ -15,9 +15,9 @@ export default defineConfig({
   },
 
   preview: {
-    // Allow Render deployment host
+    // Allow Render deployment hosts
     host: '0.0.0.0',
     port: 5174,
-    allowedHosts: ['murugan-pvc-6.onrender.com'],
+    allowedHosts: ['murugan-pvc.onrender.com', 'murugan-pvc-6.onrender.com'],
   },
 })
